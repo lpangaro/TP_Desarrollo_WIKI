@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "b829b2f9-bbfd-48e5-8c11-b475e7501329",
+		"name": "tp_desarrollo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44968810"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"vendedor\": \"68e188b03a0e1d7f8ee8c7e8\",\n  \"titulo\":\"Mesa\",\n  \"descripcion\": \"Mesa de oficina\",\n  \"categorias\": [\"Muebles\"],\n  \"precio\": 3000,\n  \"moneda\": \"PESO_ARG\",\n  \"stock\": 5,\n  \"fotos\": [\"foto1.jpg\", \"foto5.jpg\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/productos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/productos?limit=3&page=4",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar productos por vendedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/productos/vendedor/68df58e1db509474a76a9aa2?",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"productos",
+								"vendedor",
+								"68df58e1db509474a76a9aa2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Crear Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comprador\": \"68e14466c5ea3ab2fa8f9a3c\",\n  \"items\": [\n    {\n      \"producto\": \"68df5901db509474a76a9aa7\",\n      \"cantidad\": 2\n    }\n  ],\n  \"moneda\":\"PESO_ARG\",\n  \"direccionEntrega\": {\n    \"calle\": \"Av. Siempre Viva\",\n    \"altura\": \"742\",\n    \"departamento\": \"A\",\n    \"codigoPostal\": \"1000\",\n    \"ciudad\": \"Buenos Aires\",\n    \"provincia\": \"Buenos Aires\",\n    \"pais\": \"Argentina\",\n    \"lat\": \"-34.6037\",\n    \"lon\": \"-58.3816\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pedidos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pedidos/?limit=2&page=3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pedidos",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"estado\": \"cancelado\", \"motivo\":\"me arrepenti de comprarlo\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pedidos/68e464731198c94820da0006",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pedidos",
+								"68e464731198c94820da0006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener historial de pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pedidos/68e14466c5ea3ab2fa8f9a3c/historial",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pedidos",
+								"68e14466c5ea3ab2fa8f9a3c",
+								"historial"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Vendedor",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Todo Muebles\",\n    \"email\":\"todo@muebles.com\",\n    \"telefono\":\"123456789\",\n    \"tipo\":\"VENDEDOR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comprador",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Lucas perez\",\n    \"email\":\"Lucas@hotmail.com\",\n    \"telefono\":\"452459992\",\n    \"tipo\":\"COMPRADOR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notificaciones",
+			"item": [
+				{
+					"name": "Traer Notificaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/notificaciones",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar una notificacion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"leida\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/notificaciones/68df5954db509474a76a9ab1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notificaciones",
+								"68df5954db509474a76a9ab1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No Leidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notificaciones/usuario/68df58e1db509474a76a9aa1?leida=false",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notificaciones",
+								"usuario",
+								"68df58e1db509474a76a9aa1"
+							],
+							"query": [
+								{
+									"key": "leida",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/notificaciones/usuario/68df58e1db509474a76a9aa2?leida=true",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"notificaciones",
+								"usuario",
+								"68df58e1db509474a76a9aa2"
+							],
+							"query": [
+								{
+									"key": "leida",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/health-check",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

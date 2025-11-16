@@ -1,0 +1,17 @@
+.perfil-comprador {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pedido-card {
+    transition: box-shadow 0.3s ease;
+}
+
+.pedido-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+}

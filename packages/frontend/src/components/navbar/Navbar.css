@@ -1,0 +1,254 @@
+.navbar {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 100%;
+    background-color: var(--primary-white);
+}
+
+.navbar-left {
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    display: block;
+    margin-left: 1.5rem;
+}
+
+.navbar-logo-img {
+    display: none;
+    height: 40px;
+    width: auto;
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    padding: 0 1rem;
+}
+
+.navbar-right {
+    flex: 0 0 auto;
+    min-width: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.navbar-auth {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+
+.navbar-cart {
+    position: relative;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-green);
+}
+
+.cart-count {
+
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .navbar-left {
+        min-width: auto;
+        padding-left: 0.5rem;
+    }
+
+    /* Oculta el texto, muestra el logo */
+    .navbar-logo-text {
+        display: none;
+    }
+
+    .navbar-logo-img {
+        display: block;
+        margin-left: 0;
+    }
+
+    .navbar-center {
+        flex: 1;
+        max-width: none;
+        padding: 0 0.75rem;
+    }
+
+    .navbar-right {
+        min-width: auto;
+        padding-right: 0.75rem;
+    }
+
+    .navbar-auth {
+        padding-right: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        gap: 0.5rem;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .navbar-left {
+        padding-left: 0.25rem;
+    }
+
+    .navbar-logo-img {
+        height: 32px;
+    }
+
+    .navbar-center {
+        padding: 0 0.5rem;
+    }
+
+    .navbar-right {
+        padding-right: 1rem;
+    }
+
+    .navbar-auth {
+        padding-right: 1rem;
+    }
+
+    .navbar-cart {
+        font-size: 1.25rem;
+    }
+
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Auth buttons (Registrar / Iniciar sesión) */
+.navbar-auth-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-auth-btn:hover {
+    color: var(--primary-green);
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid var(--primary-green);
+
+}
+
+
+/* Ocultar texto y deja */
+@media (max-width: 768px) {
+    .navbar-auth-btn {
+        margin-left: 0.5rem;
+        gap: 0;
+    }
+
+    /* Ocultar el texto, mantener solo iconos */
+    .navbar-auth-btn {
+        font-size: 0;
+    }
+
+    .navbar-auth-btn .navbar-auth-icon {
+        font-size: 1.3rem;
+    }
+}
+
+.accordion-container {
+    /* ancho del botón del acordeón */
+    display: flex;
+    align-items: center;
+}
+
+.accordion-item {
+    position: relative;
+}
+
+/* Botón del acordeón */
+.accordion-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+.accordion-button::after {
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+/* Panel desplegable */
+.accordion-collapse {
+    position: absolute;
+    top: 100%;
+    /* aparece justo debajo del botón */
+    right: 0;
+    /* 👈 se alinea con el borde derecho del botón */
+    left: auto;
+    /* anulamos left para que no influya */
+    width: 400px;
+    /* 👈 ancho fijo del panel */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.accordion-body {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.accordion-item {
+    box-shadow: none !important;
+    /* quita cualquier sombra */
+    border: none !important;
+    /* opcional: elimina el borde */
+    background: transparent;
+    /* opcional: deja el fondo limpio */
+}
+
+.msj-notif {
+    width: 80%;
+    background-color: rgb(229, 245, 212);
+}

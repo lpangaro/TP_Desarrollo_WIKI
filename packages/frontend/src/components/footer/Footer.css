@@ -1,0 +1,61 @@
+footer-text {
+    font-size: 14px;
+    color: #666;
+    padding: 2rem 0;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+}
+
+.datos-vendedor,
+.mail-vendedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+}
+
+.mail-vendedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.telefono-vendedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.direccion-vendedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .datos-vendedor {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer {
+        padding: 1.25rem;
+    }
+
+    .footer-text {
+        font-size: 13px;
+    }
+}

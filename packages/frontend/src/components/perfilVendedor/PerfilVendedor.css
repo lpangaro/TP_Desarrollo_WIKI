@@ -1,0 +1,117 @@
+
+/* ======== FORMULARIO DE PRODUCTO ======== */
+.formulario-producto {
+    max-width: 520px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-producto h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.formulario-producto label {
+    font-weight: 600;
+    color: #444;
+    margin-top: 8px;
+}
+
+.formulario-producto input,
+.formulario-producto textarea,
+.formulario-producto select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.2s ease;
+}
+
+.formulario-producto input:focus,
+.formulario-producto textarea:focus,
+.formulario-producto select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ==== Grupos dinámicos ==== */
+.grupo-dinamico {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.grupo-dinamico h4 {
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.campo-dinamico {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.campo-dinamico input {
+    flex: 1;
+}
+
+/* ==== Botones ==== */
+.btn-principal {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #0056b3;
+}
+
+.btn-secundario {
+    background-color: #e9ecef;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #d6d8db;
+}
+
+/* Botón eliminar pequeño (❌) */
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    color: #d9534f;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 2px 4px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-eliminar:hover {
+    color: #b52b27;
+    transform: scale(1.2);
+}
+

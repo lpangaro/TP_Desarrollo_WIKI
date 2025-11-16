@@ -1,0 +1,80 @@
+.search-field {
+    flex: 1;
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 8px 20px;
+    align-items: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 85%;
+}
+
+.search-field:hover,
+.search-field:focus-within {
+    border-color: var(--primary-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tag-icon {
+    color: #999;
+    font-size: 1rem;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* make wrapper relative so we can absolutely position the animated placeholder */
+.input-wrapper {
+    position: relative;
+}
+
+.animated-placeholder-wrapper {
+    position: absolute;
+    left: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    width: calc(100% - 56px);
+    text-align: left;
+}
+
+.animated-placeholder {
+    color: #999;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 0.1rem;
+    padding-left: 1.9rem;
+    text-align: left;
+}
+
+/* hide animated placeholder when input has value or is focused */
+.animated-placeholder-wrapper.has-value {
+    opacity: 0;
+    transform: translateY(-60%);
+}
+
+.input-wrapper .MuiInput-root {
+    font-size: 15px;
+}
+
+.input-wrapper .MuiInput-root::before,
+.input-wrapper .MuiInput-root::after {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .search-field {
+        max-width: 95%;
+    }
+
+}

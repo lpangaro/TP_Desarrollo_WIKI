@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --primary-green: #165354;
+  --secondary-blue: #A6B0FF;
+  --secondary-green: #E9FFB4;
+  --primary-neon: #E9FE4B;
+  --primary-black: #010101;
+  --primary-white: rgb(250, 250, 250);
+  --primary-gray: rgb(36, 36, 36);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.link-no-style {
+  all: unset;
+  cursor: pointer;
+  display: inline;
+}
+
+.link-no-style:hover,
+.link-no-style:focus,
+.link-no-style:active,
+.link-no-style:visited {
+  all: unset;
+  cursor: pointer;
+}

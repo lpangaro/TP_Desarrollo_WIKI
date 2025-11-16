@@ -1,0 +1,40 @@
+{
+  "name": "dds-repo-base",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:backend": "npm start --workspace=backend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "start:frontend": "npm start --workspace=frontend",
+    "start:dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\"",
+    "lint": "eslint .",
+    "format": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Este repositorio es la base para el Trabajo Práctico de la materia **Desarrollo de Software (DDS)** de la carrera **Ingeniería en Sistemas de Información** de la **UTN FRBA**. Se trata de un **monorepo** que integra una aplicación frontend con Create React App y un backend con Express, facilitando el desarrollo y la gestión de ambos proyectos en un único entorno.",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react-icons": "^5.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddsw-mn/2025-2c-backend-grupo-02.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ddsw-mn/2025-2c-backend-grupo-02/issues"
+  },
+  "homepage": "https://github.com/ddsw-mn/2025-2c-backend-grupo-02#readme"
+}

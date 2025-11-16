@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.4;
+}
+
+.producto-detail-container {
+    max-width: 100rem;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    flex: 1 1 auto;
+
+
+}
+
+.producto-header {
+    padding: 20px 24px 16px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.error-message {
+    align-items: center;
+    padding: 10rem;
+    text-align: center;
+}
+
+.producto-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-vendedor {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.4rem;
+    line-height: 1.2;
+}
+
+/* //TODO: es el mismo producto-categorias que en el carrusel. los puedo unir? como */
+.producto-categoria {
+    display: inline-block;
+    background-color: var(--secondary-green);
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.12rem 0.45rem;
+    border-radius: 0.4rem;
+    line-height: 1;
+
+}
+
+
+.producto-content {
+    display: flex;
+    padding: 0;
+}
+
+.producto-image-section {
+    max-width: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.producto-image-section .contenedor-carrusel {
+    height: 100%;
+    width: 75%;
+    max-height: 500px;
+}
+
+
+.gallery-button {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.producto-info-section {
+    flex: 1;
+    padding: 20px 24px;
+    position: relative;
+}
+
+.producto-description {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 16px;
+    font-weight: 500;
+    width: 90%;
+}
+
+.producto-price-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.producto-precio {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.price-details {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+
+
+.addCarrito {
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-left: 0.4rem;
+    border: 1px solid #e0e0e0;
+}
+
+.addCarrito:disabled {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    color: #e0e0e0;
+
+    font-weight: 700;
+}
+
+.decrementar,
+.incrementar {
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    min-width: 50px;
+}
+
+.addCarrito-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 1rem;
+
+}
+
+@media (max-width: 768px) {
+    .producto-content {
+        flex-direction: column;
+    }
+
+    .producto-image-section {
+        flex: none;
+        max-width: 100%;
+    }
+
+    .producto-fotos {
+        height: auto;
+        max-height: 40vh;
+    }
+
+    .producto-rating-section {
+        position: static;
+        margin-top: 16px;
+        text-align: left;
+    }
+
+    .producto-detail-container {
+        margin: 10px;
+        border-radius: 8px;
+    }
+
+    .producto-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto-info-section {
+        padding: 16px 20px;
+    }
+}
+
+.price-question:hover {
+    color: #004ba0;
+}

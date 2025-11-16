@@ -1,0 +1,20 @@
+.text-type {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.text-type__content {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-type__cursor {
+    margin-left: 6px;
+    opacity: 1;
+    transition: opacity 120ms linear;
+}
+
+.text-type__cursor--hidden {
+    opacity: 0;
+}

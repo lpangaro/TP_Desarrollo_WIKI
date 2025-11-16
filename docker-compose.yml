@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  # Servicio de MongoDB
+  mongodb:
+    image: mongo:7.0
+    container_name: tp-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: tienda_db
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - tp-network
+
+  # Servicio del Backend
+  backend:
+    build:
+      context: ./packages/backend
+      dockerfile: Dockerfile
+    container_name: tp-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://admin:admin123@mongodb:27017/tienda_db?authSource=admin
+      JWT_SECRET: mi_super_secreto_jwt_para_desarrollo_local
+      PORT: 3000
+      NODE_ENV: development
+      ALLOWED_ORIGINS: http://localhost:3001,http://localhost
+    depends_on:
+      - mongodb
+    networks:
+      - tp-network
+    volumes:
+      # Para desarrollo: hot reload (comentar en producción)
+      - ./packages/backend:/app
+      - /app/node_modules
+
+  # Servicio del Frontend
+  frontend:
+    build:
+      context: ./packages/frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost:3000/api
+    container_name: tp-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - tp-network
+
+# Redes
+networks:
+  tp-network:
+    driver: bridge
+
+# Volúmenes persistentes
+volumes:
+  mongodb_data:
+    driver: local

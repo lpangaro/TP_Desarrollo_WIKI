@@ -1,0 +1,22 @@
+{
+    "components": [
+        {
+            "name": "FuzzyText",
+            "path": "src/components/FuzzyText/index.jsx",
+            "description": "Canvas-based fuzzy text component (manual add from reactbits).",
+            "usage": "import FuzzyText from '../../components/FuzzyText';"
+        },
+        {
+            "name": "SplitText",
+            "path": "src/components/SplitText/index.jsx",
+            "description": "GSAP SplitText wrapper for animated letter/word/line reveal (manual add).",
+            "usage": "import SplitText from '../../components/SplitText';"
+        },
+        {
+            "name": "TextType",
+            "path": "src/components/TextType/index.jsx",
+            "description": "Typing text effect component (manual add).",
+            "usage": "import TextType from '../../components/TextType';"
+        }
+    ]
+}

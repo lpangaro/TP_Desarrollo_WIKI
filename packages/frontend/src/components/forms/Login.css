@@ -1,0 +1,9 @@
+.login-exitoso {
+    text-align: center;
+    background-color: rgb(203, 245, 179);
+    padding: 2rem;
+    border-radius: 17px;
+    margin-bottom: 1rem;
+    color: var(--primary-black);
+    font-weight: bold;
+}
