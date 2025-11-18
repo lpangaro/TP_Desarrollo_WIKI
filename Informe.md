@@ -1,4 +1,3 @@
-
 # 1) Arquitectura General del Proyecto
 
 ## (A) Resumen Corto
